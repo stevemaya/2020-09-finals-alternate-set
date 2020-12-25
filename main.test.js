@@ -1,4 +1,5 @@
 const {
+  yellAll,
   fizzBuzzSingleNumber,
   triStateArea,
   uppercaseCount,
@@ -12,6 +13,21 @@ const {
   getToBed,
   digits,
 } = require("./main.js");
+
+describe("yellAll", () => {
+  it("capitalizes each string in the given array", () => {
+    expect(yellAll(["hello there", "ahoy", "greetings"])).toEqual([
+      "HELLO THERE",
+      "AHOY",
+      "GREETINGS",
+    ]);
+    expect(yellAll(["good-bye", "forever", "my lovely"])).toEqual([
+      "GOOD-BYE",
+      "FOREVER",
+      "MY LOVELY",
+    ]);
+  });
+});
 
 describe("fizzBuzzSingleNumber", () => {
   it(`returns the given number unchanged if it's not divisible by 3 or 5.`, () => {

@@ -1,16 +1,15 @@
 // Your code goes below:
 
-
-
-
-
-
 /*********************************
  * OUR CODE BELOW; DO NOT TOUCH! *
  *********************************/
 
 if (typeof fizzBuzzSingleNumber === "undefined") {
   fizzBuzzSingleNumber = undefined;
+}
+
+if (typeof yellAll === "undefined") {
+  yellAll = undefined;
 }
 
 if (typeof triStateArea === "undefined") {
@@ -59,6 +58,7 @@ if (typeof digits === "undefined") {
 
 module.exports = {
   fizzBuzzSingleNumber,
+  yellAll,
   triStateArea,
   uppercaseCount,
   isLong,
