@@ -24,6 +24,10 @@ if (typeof isLong === "undefined") {
   isLong = undefined;
 }
 
+if (typeof containsSpace === "undefined") {
+  containsSpace = undefined;
+}
+
 if (typeof containsDigit === "undefined") {
   containsDigit = undefined;
 }
@@ -38,10 +42,6 @@ if (typeof containsUpperCase === "undefined") {
 
 if (typeof containsNonAlphanumeric === "undefined") {
   containsNonAlphanumeric = undefined;
-}
-
-if (typeof containsSpace === "undefined") {
-  containsSpace = undefined;
 }
 
 if (typeof isValidPassword === "undefined") {
@@ -62,11 +62,11 @@ module.exports = {
   triStateArea,
   uppercaseCount,
   isLong,
+  containsSpace,
   containsDigit,
   containsLowerCase,
   containsUpperCase,
   containsNonAlphanumeric,
-  containsSpace,
   isValidPassword,
   getToBed,
   digits,
