@@ -114,6 +114,41 @@ triStateArea([
 
 **Description**
 
+Returns a count of strings in the given array that are entirely uppercased.
+
+**Examples**
+
+```javascript
+uppercaseCount([
+  "lorem",
+  "IPSUM",
+  "dolor",
+  "SIT",
+  "AMET",
+  "CONSECTETUR",
+  "adipiscing",
+  "elit",
+]);
+// --> 4
+
+uppercaseCount([
+  "Lorem",
+  "IPSUM",
+  "dOlor",
+  "SIT",
+  "AMeT",
+  "CONSECTETUR",
+  "adipiscing",
+  "elit",
+]);
+// --> 3
+```
+
+**Hints**
+
+- This is a reduce operation, so whether you use `.reduce` or a manual loop (and I would ALWAYS recommend a manual loop over `.reduce` for anyone but an advanced coder), you're iterating over a list and returning ONE value alone, NOT an array.
+- In order to check if a string is in a particular case, you can convert the string to that case, and then check it against the original version. If they're the same, then no actual conversion happened, so they were already in that case. Neat, huh?
+
 ##### `isValidPassword`
 
 **Description**

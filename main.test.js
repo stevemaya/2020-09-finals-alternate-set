@@ -120,7 +120,7 @@ describe("triStateArea", () => {
 });
 
 describe("uppercaseCount", () => {
-  it(`returns a count of words in the array that are entirely uppercased`, () => {
+  it(`returns a count of strings in the array that are entirely uppercased`, () => {
     const words1 = [
       "lorem",
       "IPSUM",
