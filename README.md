@@ -22,3 +22,26 @@ Again: `isValidPassword` will be graded, but the following will NOT:
 - `containsLowerCase`
 - `containsUpperCase`
 - `containsNonAlphanumeric`
+
+### Tasks
+
+##### `fizzBuzzSingleNumber`
+
+**Description**
+
+Given a number, returns the string `Fizz` if it's evenly divisible by `3`, `Buzz` if it's evenly divisible by `5`, `FizzBuzz` if it's evenly divisible by both, and the original number if it's divisible by neither.
+
+**Examples**
+
+```javascript
+fizzBuzzSingleNumber(1); // --> 1
+fizzBuzzSingleNumber(2); // --> 2
+fizzBuzzSingleNumber(3); // --> Fizz
+fizzBuzzSingleNumber(4); // --> 4
+fizzBuzzSingleNumber(5); // --> Buzz
+fizzBuzzSingleNumber(15); // --> FizzBuzz
+```
+
+**Hints**
+
+There are a few different ways to tackle the logic, but the key is structuring your logic so that a number divisible by BOTH `3` and `5` doesn't end up triggering JUST `Fizz` or `Buzz`. There are some neat solutions involving string-building or short-circuiting logic chains by returning from the function, but an `if/if else` chain is the simplest, andt simplest is probably best when you just need a green check-mark.
