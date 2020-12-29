@@ -62,3 +62,51 @@ yellAll(["good-bye", "forever", "my lovely"]); // --> ["GOOD-BYE", "FOREVER", "M
 **Hints**
 
 This is a map operation, so whether you're using `.map` or a manual loop, you want to be pushing a transformed version of each string into an array (and then returning it).
+
+##### `triStateArea`
+
+**Description**
+
+Given an array of strings representing cities with their states, returns an array of only those places whose state is "NY" or "NJ" or "CT" (also known as "the Tri-State Area").
+
+**Description**
+
+```javascript
+triStateArea([
+  "Brooklyn, NY",
+  "Stamford, CT",
+  "Boston, MA",
+  "Buffalo, NY",
+  "Los Angeles, CA",
+]);
+
+// --> ["Brooklyn, NY", "Stamford, CT", "Buffalo, NY"]
+triStateArea([
+  "bridgeport, ct",
+  "portland, or",
+  "newark, nj",
+  "seattle, wa",
+  "northampton, ma",
+]);
+
+// --> ["bridgeport, ct", "newark, nj"]
+
+triStateArea([
+  "Brooklyn, NY",
+  "Stamford, CT",
+  "Acton, OH",
+  "Buffalo, NY",
+  "Spiny Toad, TX",
+]);
+
+// --> ["Brooklyn, NY", "Stamford, CT", "Buffalo, NY"]
+```
+
+`
+**Hints**
+
+- This is a filter operation, so whether you're using `.filter` or a manual loop, make sure you're checking each value in the original array and only pushing a value in to the array you'll return if that value meets our criteria.
+- You'll need to check if the string ends with ANY ONE of `NY` or `NJ` or `CT`; it doesn't need to (nor can it!) end with all three. Watch those ORs and ANDs!
+- The second and third tests for this function are a little more difficult, and could be skipped if you don't want to spend time researching them in favor of simpler problems.
+- That said, for case insensitivity, you'll just want to make sure you're either checking against both case options (e.g., `NY` and `ny`), or changing the case for checking purposes (making sure to push the non-transformed version in if it's a match!).
+- And for making sure that `Acton, OH` doesn't match (the `ct` is in the middle of the string), there is a built-in string method that checks whether a string ends with a given substring.
