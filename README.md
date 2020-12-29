@@ -45,3 +45,20 @@ fizzBuzzSingleNumber(15); // --> FizzBuzz
 **Hints**
 
 There are a few different ways to tackle the logic, but the key is structuring your logic so that a number divisible by BOTH `3` and `5` doesn't end up triggering JUST `Fizz` or `Buzz`. There are some neat solutions involving string-building or short-circuiting logic chains by returning from the function, but an `if/if else` chain is the simplest, andt simplest is probably best when you just need a green check-mark.
+
+##### `yellAll`
+
+**Description**
+
+Capitalizes each letter in each string in the given array.
+
+**Examples**
+
+```javascript
+yellAll(["hello there", "ahoy", "greetings"]); // --> ["HELLO THERE", "AHOY", "GREETINGS"]
+yellAll(["good-bye", "forever", "my lovely"]); // --> ["GOOD-BYE", "FOREVER", "MY LOVELY"]
+```
+
+**Hints**
+
+This is a map operation, so whether you're using `.map` or a manual loop, you want to be pushing a transformed version of each string into an array (and then returning it).
