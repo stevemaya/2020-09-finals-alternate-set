@@ -109,3 +109,39 @@ triStateArea([
 - The second and third tests for this function are a little more difficult, and could be skipped if you don't want to spend time researching them in favor of simpler problems.
 - That said, for case insensitivity, you'll just want to make sure you're either checking against both case options (e.g., `NY` and `ny`), or changing the case for checking purposes (making sure to push the non-transformed version in if it's a match!).
 - And for making sure that `Acton, OH` doesn't match (the `ct` is in the middle of the string), there is a built-in string method that checks whether a string ends with a given substring.
+
+##### `uppercaseCount`
+
+**Description**
+
+##### `isValidPassword`
+
+**Description**
+
+Returns `true` if the given string contains a lowercase letter, an uppercase letter, a digit, a non-alphanumeric character, and no spaces. Returns `false` otherwise.
+
+**Examples**
+
+```javascript
+// No uppercase letters:
+isValidPassword("jelly22fi$h"); // --> false
+// No lowercase letters:
+isValidPassword("JELLY22FI$H"); // --> false
+// No digits:
+isValidPassword("Usher!"); // --> false
+// no non-alphanumeric characters:
+isValidPassword("Passw0rd"); // --> false
+// DOES have spaces:
+isValidPassword("Passw0rd #(@$"); // --> false
+// valid passwords (at least one uppercase and lowecase letter, a digit, a non-alphanumeric character, and no spaces):
+isValidPassword("Lov3MyP!ano"); // --> true
+isValidPassword("1Ki77$"); // --> true
+isValidPassword("a11Black$"); // --> true
+isValidPassword("BankLogin!3"); // --> true
+```
+
+**Hints**
+
+- See the note in the section "An Important Note On `isValidPassword`" near the top of this README.
+- Non-alphanumeric means any character that is neither a letter of the alphabet nor a digit. So `$` and `-` are non-alphumeric, while `a` and `B` and `0` and `5` are NOT.
+- Remember that we want a password that DOES contain something for most cases, like a digit or an uppercase letter. But for spaces, we want to make sure it does NOT contain that character.
