@@ -45,6 +45,8 @@ fizzBuzzSingleNumber(15); // --> FizzBuzz
 
 There are a few different ways to tackle the logic, but the key is structuring your logic so that a number divisible by BOTH `3` and `5` doesn't end up triggering JUST `Fizz` or `Buzz`. There are some neat solutions involving string-building or short-circuiting logic chains by returning from the function, but an `if/if else` chain is the simplest, andt simplest is probably best when you just need a green check-mark.
 
+---
+
 ##### `yellAll`
 
 **Description**
@@ -61,6 +63,8 @@ yellAll(["good-bye", "forever", "my lovely"]); // --> ["GOOD-BYE", "FOREVER", "M
 **Hints**
 
 This is a map operation, so whether you're using `.map` or a manual loop, you want to be pushing a transformed version of each string into an array (and then returning it).
+
+---
 
 ##### `triStateArea`
 
@@ -110,6 +114,8 @@ triStateArea([
 - That said, for case insensitivity, you'll just want to make sure you're either checking against both case options (e.g., `NY` and `ny`), or changing the case for checking purposes (making sure to push the non-transformed version in if it's a match!).
 - And for making sure that `Acton, OH` doesn't match (the `ct` is in the middle of the string), there is a built-in string method that checks whether a string ends with a given substring.
 
+---
+
 ##### `uppercaseCount`
 
 **Description**
@@ -149,6 +155,8 @@ uppercaseCount([
 - This is a reduce operation, so whether you use `.reduce` or a manual loop (and I would ALWAYS recommend a manual loop over `.reduce` for anyone but an advanced coder), you're iterating over a list and returning ONE value alone, NOT an array.
 - In order to check if a string is in a particular case, you can convert the string to that case, and then check it against the original version. If they're the same, then no actual conversion happened, so they were already in that case. Neat, huh?
 
+---
+
 ##### `isValidPassword`
 
 **Description**
@@ -180,3 +188,9 @@ isValidPassword("BankLogin!3"); // --> true
 - See the note in the section "An Important Note On `isValidPassword`" near the top of this README.
 - Non-alphanumeric means any character that is neither a letter of the alphabet nor a digit. So `$` and `-` are non-alphumeric, while `a` and `B` and `0` and `5` are NOT.
 - Remember that we want a password that DOES contain something for most cases, like a digit or an uppercase letter. But for spaces, we want to make sure it does NOT contain that character.
+
+---
+
+##### `getToBed`
+
+**Description**
