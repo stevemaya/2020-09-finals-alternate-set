@@ -12,16 +12,15 @@
 
 ### An Important Note On `isValidPassword`
 
-The SIX problems before it, from `IsLong` to `containsSpace`, are helper functions for `isValidPassword`, with the tests for them provided **for your benefit only**. That means that **they are not graded**. The tests will help you know for sure that each sub-problem (like, "Does a string contain a space?") is functioning correctly, so at the end you can worry only about combining them, not the individual parts.
+The FIVE problems before it, from `containsDigit` to `containsSpace`, are helper functions for `isValidPassword`, with the tests for them provided **for your benefit only**. That means that **they are not graded**. The tests will help you know for sure that each sub-problem (like, "Does a string contain a space?") is functioning correctly, so at the end you can worry only about combining them, not the individual parts.
 
 Again: `isValidPassword` will be graded, but the following will NOT:
 
-- `isLong`
-- `containsSpace`
 - `containsDigit`
 - `containsLowerCase`
 - `containsUpperCase`
 - `containsNonAlphanumeric`
+- `containsSpace`
 
 ### Tasks
 
