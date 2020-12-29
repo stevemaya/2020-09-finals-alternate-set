@@ -20,10 +20,6 @@ if (typeof uppercaseCount === "undefined") {
   uppercaseCount = undefined;
 }
 
-if (typeof isLong === "undefined") {
-  isLong = undefined;
-}
-
 if (typeof containsSpace === "undefined") {
   containsSpace = undefined;
 }
@@ -61,7 +57,6 @@ module.exports = {
   yellAll,
   triStateArea,
   uppercaseCount,
-  isLong,
   containsSpace,
   containsDigit,
   containsLowerCase,

@@ -3,7 +3,6 @@ const {
   yellAll,
   triStateArea,
   uppercaseCount,
-  isLong,
   containsDigit,
   containsLowerCase,
   containsUpperCase,
@@ -172,20 +171,6 @@ describe("uppercaseCount", () => {
     ];
     expect(uppercaseCount(words1)).toBe(3);
     expect(uppercaseCount(words2)).toBe(4);
-  });
-});
-
-describe("isLong", () => {
-  it(`returns true if the given string is longer than 15 characters`, () => {
-    expect(isLong("the quick brown fox")).toBe(true);
-  });
-
-  it(`returns false if the given string is shorter than 15 characters`, () => {
-    expect(isLong("the quick")).toBe(false);
-  });
-
-  it(`returns true if the given string is exactly 15 characters`, () => {
-    expect(isLong("the quick brown")).toBe(true);
   });
 });
 
