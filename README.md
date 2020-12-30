@@ -312,3 +312,5 @@ digits(4.04); // --> [4, 0, 4]
 
 - This is harder than it sounds.
 - Although there might be a mathematical way to do this, it's far simpler to deal with the numbers as _characters_, which means you'll need a string. But because we are taking in a number and expecting to output an array of numbers, if you go the string route, you'll need to convert numbers to strings and back to numbers.
+- If you do decide on the String-Number Conversion Dance, I recommend `.toString()` for converting to strings and `Number` to convert to a number; they're the clearest and simplest methods!
+- Make sure you're using those conversion functions/methods correctly. Do your research!
