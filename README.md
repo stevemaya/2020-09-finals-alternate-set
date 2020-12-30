@@ -194,3 +194,121 @@ isValidPassword("BankLogin!3"); // --> true
 ##### `getToBed`
 
 **Description**
+
+Returns the original people but with everyone awake between 1am and 4am set to asleep.
+
+**Examples**
+
+```javascript
+getToBed([
+  {
+    name: "Colin",
+    localTime: 730,
+    asleep: false,
+  },
+  {
+    name: "Alice",
+    localTime: 130,
+    asleep: false,
+  },
+  {
+    name: "Evelyn",
+    localTime: 200,
+    asleep: true,
+  },
+  {
+    name: "William",
+    localTime: 330,
+    asleep: false,
+  },
+  {
+    name: "Ivy",
+    localTime: 1450,
+    asleep: true,
+  },
+]);
+/* --> [
+      {
+        name: "Colin",
+        localTime: 730,
+        asleep: false,
+      },
+      {
+        name: "Alice",
+        localTime: 130,
+        asleep: true,
+      },
+      {
+        name: "Evelyn",
+        localTime: 200,
+        asleep: true,
+      },
+      {
+        name: "William",
+        localTime: 330,
+        asleep: true,
+      },
+      {
+        name: "Ivy",
+        localTime: 1450,
+        asleep: true,
+      },
+    ]
+    */
+```
+
+**Hints**
+
+- This is a map operation, so whether you're using `.map` or a manual loop, you want to be pushing a transformed version of each object into an array (and then returning it).
+- Note that those whose local time is NOT between 1am and 4am should be left to their own devices. They can be asleep or not; they are put into your resulting array unchanged.
+- So this is a big one, and one you may not have known: when you access an object in an array and make a change to that object (say, changing its `asleep` attribute to `true`), you are changing it in the original array. In the example given above, there's only one "Alice" object in the array, and JavaScript doesn't copy things without you asking for it.
+
+  Let's look at some examples.
+
+```javascript
+const doggy1 = { name: "Ralph", isAGoodDogYesHeIs: true };
+doggy1.name = "Gandalf";
+doggy1; // --> { name: "Gandalf", isAGoodDogYesHeIs: true }
+
+const doggy2 = { name: "Waldo", isAGoodDogYesHeIs: true };
+const doggies1 = [];
+const doggies2 = [];
+doggies1.push(doggy2);
+doggies2.push(doggy2);
+doggy2.isAGoodDogYesHeIs = false;
+doggies1; // --> [{ name: "Waldo", isAGoodDogYesHeIs: false }]
+doggies2; // --> [{ name: "Waldo", isAGoodDogYesHeIs: false }]
+
+const doggy3 = { name: "Biff", isAGoodDogYesHeIs: true };
+const doggies3 = [];
+const doggies4 = [];
+doggies3.push(doggy3);
+doggies4.push(doggy3);
+doggies3[0].name = "Bamf";
+doggies4; // --> [{ name: "Bamf", isAGoodDogYesHeIs: true }]
+```
+
+So! If, while iterating over the original array, you change the object you're dealing with to set its `asleep` to `true`, the original array will also have its object's property changed. Not through some arcane psychic link between the two, but because there aren't two objects at all. They're the same object!
+
+What's the solution here? Make a new object, copy over the attributes, change what you need to change if anything, and THEN get that NEW object into the resulting array (whether through `.map` or a loop).
+
+---
+
+##### digits
+
+**Description**
+
+Turns a positive number into an array of its digits, ignoring negative signs and decimal points.
+
+**Examples**
+
+```javascript
+digits(12350); // --> [1, 2, 3, 5, 0]
+digits(-12350); // --> [1, 2, 3, 5, 0]
+digits(4.04); // --> [4, 0, 4]
+```
+
+**Hints**
+
+- This is harder than it sounds.
+- Although there might be a mathematical way to do this, it's far simpler to deal with the numbers as _characters_, which means you'll need a string. But because we are taking in a number and expecting to output an array of numbers, if you go the string route, you'll need to convert numbers to strings and back to numbers.
