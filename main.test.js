@@ -377,27 +377,6 @@ describe("isValidPassword", () => {
   });
 });
 
-describe("digits", () => {
-  it(`can turn a positive number into an array of its digits`, () => {
-    expect(digits(0)).toEqual([0]);
-    expect(digits(1)).toEqual([1]);
-    expect(digits(12)).toEqual([1, 2]);
-    expect(digits(12350)).toEqual([1, 2, 3, 5, 0]);
-  });
-
-  it(`can turn a negative number into an array of its digits, ignoring the negative sign`, () => {
-    expect(digits(-0)).toEqual([0]);
-    expect(digits(-1)).toEqual([1]);
-    expect(digits(-12)).toEqual([1, 2]);
-    expect(digits(-12350)).toEqual([1, 2, 3, 5, 0]);
-  });
-
-  it(`can turn a floating point number into an array of its digits, ignoring the decimal point`, () => {
-    expect(digits(3.1519)).toEqual([3, 1, 5, 1, 9]);
-    expect(digits(4.04)).toEqual([4, 0, 4]);
-  });
-});
-
 describe("getToBed", () => {
   it(`returns the original people but with everyone awake between 1am and 4am set to asleep`, () => {
     const people = [
@@ -578,5 +557,26 @@ describe("getToBed", () => {
 
     getToBed(people);
     expect(people).toEqual(originalPeople);
+  });
+});
+
+describe("digits", () => {
+  it(`can turn a positive number into an array of its digits`, () => {
+    expect(digits(0)).toEqual([0]);
+    expect(digits(1)).toEqual([1]);
+    expect(digits(12)).toEqual([1, 2]);
+    expect(digits(12350)).toEqual([1, 2, 3, 5, 0]);
+  });
+
+  it(`can turn a negative number into an array of its digits, ignoring the negative sign`, () => {
+    expect(digits(-0)).toEqual([0]);
+    expect(digits(-1)).toEqual([1]);
+    expect(digits(-12)).toEqual([1, 2]);
+    expect(digits(-12350)).toEqual([1, 2, 3, 5, 0]);
+  });
+
+  it(`can turn a floating point number into an array of its digits, ignoring the decimal point`, () => {
+    expect(digits(3.1519)).toEqual([3, 1, 5, 1, 9]);
+    expect(digits(4.04)).toEqual([4, 0, 4]);
   });
 });
