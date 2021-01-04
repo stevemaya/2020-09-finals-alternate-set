@@ -51,7 +51,33 @@ const containsDigit = (strs) => {
   }
 }
 
+const containsLowerCase = (str) => {
+  if (str.toLowerCase()) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
+const containsUpperCase = str => {
+  if (str.toUpperCase()) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+const containsNonAlphanumeric = (char) => {
+  return char.match(/^[a-z0-9]+$/i) === null;
+}
+
+const containsSpace = (str) => {
+  if(str.indexOf(' ') >= 0){
+    return true;
+  } else {
+    return false;
+  }
+}
 
 /*********************************
  * OUR CODE BELOW; DO NOT TOUCH! *
